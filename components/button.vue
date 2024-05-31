@@ -1,9 +1,21 @@
 <script setup lang="ts">
+type methodName = "plus" | "minus";
 
+interface ButtonProps {
+  method: methodName;
+  id: string;
+}
+const props = defineProps<ButtonProps>();
+
+function onClickHandler() {
+  useFetch(`/api/test/${props.id}`, {
+    method: "patch",
+  });
+}
 </script>
 
 <template>
-  <button>
-    <slot/>
+  <button @click="onClickHandler">
+    <slot />
   </button>
 </template>
