@@ -1,0 +1,8 @@
+{
+  "main-page": {
+    "create-counter": {
+      "header": "Create a new counter:",
+      "body": "Type here a counter name"
+    }
+  }
+}
