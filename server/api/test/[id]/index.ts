@@ -1,4 +1,4 @@
-import data from "../../../../public/counters_data.json";
+import data from "@database";
 
 export default defineEventHandler((event) => {
   const id = event.context.params!.id;
