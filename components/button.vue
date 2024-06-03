@@ -10,6 +10,9 @@ const props = defineProps<ButtonProps>();
 function onClickHandler() {
   useFetch(`/api/test/${props.id}`, {
     method: "patch",
+    body: {
+      method: props.method,
+    },
   });
 }
 </script>
