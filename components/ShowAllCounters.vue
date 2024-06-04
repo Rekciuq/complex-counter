@@ -1,15 +1,11 @@
 <script setup lang="ts">
-const countersArray = await useFetch("/api/test").data;
-
-function giveCounter(counter: { name: string; count: string }, id: string) {
-  return { name: counter.name, count: counter.count, id };
-}
+const store = useCounterStore();
 </script>
 <template>
-  <h2>{{ countersArray }}</h2>
+  <h2 v-if="!store.getAllCounters.length">There are now counters yet!</h2>
   <Counter
-    v-for="(counter, index) in countersArray"
-    :key="index"
-    :counter="giveCounter(counter, index)"
+    v-for="counter in store.getAllCounters"
+    :key="counter.id"
+    :counter="counter"
   />
 </template>

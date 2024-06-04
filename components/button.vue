@@ -1,19 +1,15 @@
 <script setup lang="ts">
-type methodName = "plus" | "minus";
+type methodName = "increment" | "decrement";
 
 interface ButtonProps {
   method: methodName;
-  id: string;
+  id: number;
 }
+const store = useCounterStore();
 const props = defineProps<ButtonProps>();
 
 function onClickHandler() {
-  useFetch(`/api/test/${props.id}`, {
-    method: "patch",
-    body: {
-      method: props.method,
-    },
-  });
+  store[props.method](props.id);
 }
 </script>
 
