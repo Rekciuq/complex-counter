@@ -4,7 +4,7 @@ const store = useCounterStore();
 const counterName = ref("");
 
 function onClickHandler() {
-  if (!counterName) {
+  if (!counterName.value) {
     return;
   }
   store.pushNewCounter(counterName.value);
