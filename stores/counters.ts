@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
+import { v4 as uuidv4 } from "uuid";
 
 interface Counter {
-  id: number;
+  id: string;
   name: string;
   count: number;
 }
@@ -14,11 +15,11 @@ export const useCounterStore = defineStore("counters", {
     getAllCounters: (state) => state.counterList,
     getSingleCounter:
       (state) =>
-      (id: number): Counter | undefined =>
+      (id: string): Counter | undefined =>
         state.counterList.find((counter) => counter.id === id),
   },
   actions: {
-    increment(id: number): boolean {
+    increment(id: string): boolean {
       const counter = this.findCounter(id);
       if (counter) {
         counter.count++;
@@ -26,7 +27,7 @@ export const useCounterStore = defineStore("counters", {
       }
       return false;
     },
-    decrement(id: number): boolean {
+    decrement(id: string): boolean {
       const counter = this.findCounter(id);
       if (counter) {
         counter.count--;
@@ -36,14 +37,14 @@ export const useCounterStore = defineStore("counters", {
     },
     pushNewCounter(newName: string) {
       const newCounter: Counter = {
-        id: this.counterList.length,
+        id: uuidv4(),
         name: newName,
         count: 0,
       };
       this.counterList.push(newCounter);
       return newCounter;
     },
-    removeCounter(id: number) {
+    removeCounter(id: string) {
       const counter = this.findCounter(id);
       if (!counter) {
         return false;
@@ -52,7 +53,7 @@ export const useCounterStore = defineStore("counters", {
       this.counterList.splice(index, 1);
       return true;
     },
-    findCounter(id: number): Counter | false {
+    findCounter(id: string): Counter | false {
       const counter = this.$state.counterList.find(
         (counter) => counter.id === id
       );

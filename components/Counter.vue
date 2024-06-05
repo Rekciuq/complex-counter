@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface CounterProps {
   counter: {
-    id: number;
+    id: string;
     name: string;
     count: number;
   };

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface CounterProps {
-  id: number;
+  id: string;
 }
 const props = defineProps<CounterProps>();
 const store = useCounterStore();
