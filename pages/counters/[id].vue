@@ -1,9 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: ["verify-counter-id"],
-});
 const route = useRoute();
 const { id } = route.params;
+console.log(localStorage.getItem("counters"));
 </script>
 
 <template>

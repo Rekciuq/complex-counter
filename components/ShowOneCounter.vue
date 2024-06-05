@@ -6,6 +6,9 @@ const props = defineProps<CounterProps>();
 const store = useCounterStore();
 
 const counter = store.getSingleCounter(props.id);
+if (!counter) {
+  navigateTo("/");
+}
 </script>
 
 <template>

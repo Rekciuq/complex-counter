@@ -63,4 +63,7 @@ export const useCounterStore = defineStore("counters", {
       return false;
     },
   },
+  persist: {
+    storage: persistedState.localStorage,
+  },
 });
