@@ -22,7 +22,7 @@ function onClickHandler() {
 <template>
   <div class="counter-container">
     <p class="counter__header">{{ counter!.name }}</p>
-    <div class="counter-body">
+    <div class="counter__body">
       <Button :method="'decrement'" :id="counter!.id"><IconsMinus /></Button>
       <p>{{ counter!.count }}</p>
       <Button :method="'increment'" :id="counter!.id"><IconsPlus /></Button>

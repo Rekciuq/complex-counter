@@ -58,21 +58,32 @@ input {
   justify-content: space-around;
   height: 80vh;
 
-  .counter-body {
+  .counter__header,
+  .counter__body p {
+    @include text-xl();
+  }
+
+  .counter__body {
     display: flex;
     width: 100%;
     column-gap: $primary-indent;
     justify-content: center;
+    align-items: center;
+
+    button {
+      width: $primary-indent * 1.5;
+      height: $primary-indent * 1.5;
+    }
   }
 
   .counter__button--remove {
     letter-spacing: 0.33rem;
+    padding: $primary-offset * 2;
   }
 }
 
 .counter-card__container {
   display: flex;
-  width: 100%;
   height: 3.2rem;
   margin-top: 1.25rem;
   justify-content: center;
@@ -93,6 +104,7 @@ input {
   .counter-card__body {
     display: flex;
     width: 100%;
+    align-items: center;
     justify-content: space-around;
     flex-direction: row;
   }
@@ -107,7 +119,7 @@ input {
 .popup {
   position: fixed;
   bottom: -7.5rem;
-  left: 2.5rem;
+  left: $primary-indent;
   padding: 1.5rem;
   border-radius: 10px;
   color: white;
@@ -137,12 +149,10 @@ input {
       width: 20rem;
     }
   }
-  a {
-    width: 18.75rem !important;
-  }
+
   .counters-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 18.75rem);
     column-gap: $primary-indent;
   }
 }
