@@ -2,7 +2,11 @@
   "main-page": {
     "create-counter": {
       "header": "Create a new counter:",
-      "body": "Type here a counter name"
+      "body": "Type here a counter name",
+      "validation": {
+        "nothing": " You need at least one symbol to create a counter!",
+        "too-much-symbols": "Your counter name is too big! 20 symbols is a maximum!"
+      }
     },
     "remove-counter": "Counter was removed!"
   },

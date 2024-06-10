@@ -36,8 +36,17 @@ input {
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-  p {
+  .create__header {
     letter-spacing: 0.112rem;
+  }
+
+  .create__danger-border {
+    border: 1px solid $danger-color;
+  }
+
+  .create__error-handler {
+    color: $danger-color;
+    text-align: justify;
   }
 }
 
@@ -110,20 +119,26 @@ input {
   animation-delay: 1s;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .create-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $primary-indent;
+    p {
+      grid-column-end: span 2;
+    }
     input,
     button {
-      width: 320px;
+      width: 20rem;
     }
   }
   a {
-    width: 320px !important;
+    width: 18.75rem !important;
   }
   .counters-grid {
     display: grid;
