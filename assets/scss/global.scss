@@ -125,6 +125,11 @@ input {
   a {
     width: 320px !important;
   }
+  .counters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: $primary-indent;
+  }
 }
 
 @keyframes remove {
