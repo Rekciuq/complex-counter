@@ -1,7 +1,37 @@
 $font-face: "Montserrat";
 $svg-fill-color: #5f6368;
 $primary-indent: 2.5rem;
+$primary-offset: 0.5rem;
+$icon-background-color: #c7daf9;
+
+@mixin svg-size() {
+  height: 12px;
+  width: 12px;
+}
+
 @mixin button() {
   cursor: pointer;
+  background-color: $icon-background-color;
+  border: 0;
+  border-radius: 10px;
+  padding: $primary-offset calc($primary-offset / 2);
   text-transform: uppercase;
+}
+
+@mixin a() {
+  text-decoration: none;
+  color: black;
+}
+
+@mixin input() {
+  padding: $primary-offset;
+  border: 1px solid $icon-background-color;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+@mixin primary-font-properties() {
+  font-family: $font-face;
+  font-size: 1.25rem;
+  font-weight: 500;
 }

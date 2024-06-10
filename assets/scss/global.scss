@@ -10,20 +10,19 @@ svg {
 body,
 input,
 button {
-  font-family: $font-face;
+  @include primary-font-properties;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+  @include a;
 }
 
 button {
   @include button;
 }
 
-.header {
-  position: fixed;
+input {
+  @include input;
 }
 
 .container {
@@ -38,7 +37,6 @@ button {
   row-gap: 1.25rem;
   text-transform: uppercase;
   p {
-    font-weight: 500;
     letter-spacing: 0.112rem;
   }
 }
@@ -104,10 +102,9 @@ button {
   padding: 1.5rem;
   border-radius: 10px;
   color: white;
-  font-weight: 500;
-  font-size: 20px;
   background-color: #303030f2;
 }
+
 .popup-play {
   animation: remove 1.5s ease-out 2 alternate;
   animation-delay: 1s;
