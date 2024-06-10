@@ -1,7 +1,124 @@
-.dandy {
-  color: $dandy;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-body {
+svg {
+  fill: $svg-fill-color;
+}
+
+body,
+input,
+button {
   font-family: $font-face;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  @include button;
+}
+
+.header {
+  position: fixed;
+}
+
+.container {
+  margin-top: $primary-indent;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.create-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  text-transform: uppercase;
+  p {
+    font-weight: 500;
+    letter-spacing: 0.112rem;
+  }
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $primary-indent * 2;
+  justify-content: space-around;
+  height: 80vh;
+
+  .counter-body {
+    display: flex;
+    width: 100%;
+    column-gap: $primary-indent;
+    justify-content: center;
+  }
+
+  .counter__button--remove {
+    letter-spacing: 0.33rem;
+  }
+}
+
+.counter-card__container {
+  display: flex;
+  width: 100%;
+  height: 3.2rem;
+  margin-top: 1.25rem;
+  justify-content: center;
+  .counter-card__header {
+    text-align: center;
+  }
+
+  .counter-card__body {
+    display: none;
+  }
+}
+
+.counter-card__container:hover {
+  .counter-card__header {
+    display: none;
+  }
+
+  .counter-card__body {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+
+.navigate__home {
+  position: fixed;
+  bottom: $primary-indent;
+  left: $primary-indent;
+}
+
+.popup {
+  position: fixed;
+  bottom: -7.5rem;
+  left: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #303030f2;
+}
+.popup-play {
+  animation: remove 1.5s ease-out 2 alternate;
+  animation-delay: 1s;
+}
+
+@keyframes remove {
+  0% {
+    bottom: -7.5rem;
+  }
+
+  100% {
+    bottom: 2.5rem;
+  }
 }

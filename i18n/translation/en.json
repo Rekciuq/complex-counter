@@ -3,6 +3,14 @@
     "create-counter": {
       "header": "Create a new counter:",
       "body": "Type here a counter name"
+    },
+    "remove-counter": "Counter was removed!"
+  },
+  "counter-page": {
+    "dialog": {
+      "question": "Do you really want to remove this counter?",
+      "deny": "No",
+      "accept": "Yes"
     }
   }
 }

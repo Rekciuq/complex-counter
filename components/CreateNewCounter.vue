@@ -13,7 +13,7 @@ function onClickHandler() {
 </script>
 
 <template>
-  <div class="container">
+  <div class="create-container">
     <p>{{ t("main-page.create-counter.header") }}</p>
     <input
       v-model="counterName"

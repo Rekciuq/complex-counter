@@ -5,7 +5,6 @@ const { id } = route.params;
 
 <template>
   <NuxtLayout>
-    <Header />
     <ShowOneCounter :id="id as string" />
   </NuxtLayout>
 </template>

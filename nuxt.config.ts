@@ -12,7 +12,9 @@ export default defineNuxtConfig({
     display: "swap",
     subsets: "latin",
     families: {
-      Montserrat: true,
+      Montserrat: {
+        wght: "400..900",
+      },
     },
   },
   i18n: {

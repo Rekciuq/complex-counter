@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import type { NavigationQuery } from "../types/navigationQuery";
+
 interface CounterProps {
   id: string;
 }
+
 const props = defineProps<CounterProps>();
 const store = useCounterStore();
 
@@ -12,7 +15,7 @@ if (!counter) {
 
 function onClickHandler() {
   store.removeCounter(props.id);
-  navigateTo("/");
+  navigateTo({ path: "/", query: { counterRemoved: true } as NavigationQuery });
 }
 </script>
 
@@ -24,8 +27,9 @@ function onClickHandler() {
       <p>{{ counter!.count }}</p>
       <Button :method="'increment'" :id="counter!.id"><IconsPlus /></Button>
     </div>
-    <button class="counter-remove__button" @click="onClickHandler">
+    <button class="counter__button--remove" @click="onClickHandler">
       Remove Counter
     </button>
+    <BackLink />
   </div>
 </template>

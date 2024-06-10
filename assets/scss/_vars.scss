@@ -1,2 +1,7 @@
-$dandy: #7ad9ff;
 $font-face: "Montserrat";
+$svg-fill-color: #5f6368;
+$primary-indent: 2.5rem;
+@mixin button() {
+  cursor: pointer;
+  text-transform: uppercase;
+}
