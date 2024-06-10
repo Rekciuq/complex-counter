@@ -4,7 +4,8 @@ const store = useCounterStore();
 const counterName = ref("");
 
 function onClickHandler() {
-  if (!counterName.value) {
+  if (!counterName.value || counterName.value.length > 20) {
+    counterName.value = "";
     return;
   }
   store.pushNewCounter(counterName.value);

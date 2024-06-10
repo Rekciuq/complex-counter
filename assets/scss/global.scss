@@ -32,10 +32,10 @@ input {
 }
 
 .create-container {
-  display: flex;
-  flex-direction: column;
   row-gap: 1.25rem;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
   p {
     letter-spacing: 0.112rem;
   }
@@ -108,6 +108,23 @@ input {
 .popup-play {
   animation: remove 1.5s ease-out 2 alternate;
   animation-delay: 1s;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .create-container {
+    input,
+    button {
+      width: 320px;
+    }
+  }
+  a {
+    width: 320px !important;
+  }
 }
 
 @keyframes remove {
