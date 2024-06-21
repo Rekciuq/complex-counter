@@ -21,6 +21,11 @@ button {
   @include button;
 }
 
+button:hover {
+  background-color: $hover-background-color;
+  @include hover-effect;
+}
+
 input {
   @include input;
 }

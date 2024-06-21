@@ -3,6 +3,7 @@ $svg-fill-color: #5f6368;
 $primary-indent: 2.5rem;
 $primary-offset: 0.5rem;
 $icon-background-color: #c7daf9;
+$hover-background-color: #bed0ed;
 $danger-color: #fa8072;
 
 @mixin svg-size() {
@@ -42,4 +43,8 @@ $danger-color: #fa8072;
   font-family: $font-face;
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+@mixin hover-effect() {
+  transition: background ease-out 0.3s;
 }
